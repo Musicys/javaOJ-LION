@@ -10,21 +10,62 @@
   <a href="https://gitee.com/macrozheng/mall"><img src="http://macro-oss.oss-cn-shenzhen.aliyuncs.com/mall/badge/%E7%A0%81%E4%BA%91-%E9%A1%B9%E7%9B%AE%E5%9C%B0%E5%9D%80-orange.svg" alt="码云"></a>
 </p>
 
+
+## UI界面
+
+### 一、用户认证模块(/ui目录)
+| 界面名称     | 截图文件       | 功能说明                                                           |
+| ------------ | -------------- | ------------------------------------------------------------------ |
+| 注册页面     | `注册.png`     | 新用户填写账号、密码、验证码等信息完成注册                         |
+| 登录页面     | `登录.png`     | 用户通过账号密码登录系统，支持第三方登录入口                       |
+| 用户信息管理 | `用户信息.png` | 展示用户基本信息（昵称/头像/联系方式），支持个人信息修改和密码重置 |
+
+### 二、用户功能模块
+| 界面名称     | 截图文件         | 功能说明                                          |
+| ------------ | ---------------- | ------------------------------------------------- |
+| 普通用户主页 | `普通用户.png`   | 用户登录后的主操作界面，展示功能导航和个人动态    |
+| 问题交流版   | `用户回复版.png` | 用户之间的问答交流区，支持富文本回复和@功能       |
+| 提交记录     | `普通提交）.png` | 显示代码/答案提交历史记录，包含执行结果和耗时统计 |
+
+### 三、管理后台模块
+| 界面名称 | 截图文件         | 功能说明                                                 |
+| -------- | ---------------- | -------------------------------------------------------- |
+| 仪表盘   | `管理员 (1).png` | 管理员工作台，展示系统关键指标（用户量/题目数/日活等）   |
+| 用户管理 | `管理员 (2).png` | 用户账号管理界面，支持封禁/权限分配/行为日志查询         |
+| 题目管理 | `管理员 (3).png` | 编程题目CRUD操作界面，包含测试用例配置和难度分级         |
+| 内容审核 | `管理员 (4).png` | 用户生成内容（评论/题解）审核面板，支持批量通过/驳回操作 |
+
+### 四、题目交互模块
+| 界面名称   | 截图文件           | 功能说明                                                        |
+| ---------- | ------------------ | --------------------------------------------------------------- |
+| 题目列表   | `题目页面 (1).png` | 按分类/难度筛选的题目列表，显示通过率和热度标签                 |
+| 题目详情   | `题目页面 (2).png` | 题目描述+示例代码区，支持多语言切换和题目收藏功能               |
+| 代码编辑器 | `题目页面 (3).png` | 集成Monaco Editor的在线编码环境，提供调试/提交/历史版本对比功能 |
+
+### 五、首页展示
+| 界面名称   | 截图文件             | 功能说明                                           |
+| ---------- | -------------------- | -------------------------------------------------- |
+| 未登录首页 | `首页（未登录）.png` | 系统入口页面，展示平台特色、热门题目和注册登录入口 |
+
+### 界面设计规范
+1. **响应式布局**：支持PC/平板/手机多端适配
+2. **视觉层级**：使用Ant Design Vue组件库，符合WCAG 2.1无障碍标准
+3. **交互反馈**：关键操作提供Toast提示，表单错误实时校验
+4. **主题定制**：通过`scss`变量支持深色/浅色主题切换
+
+
+
 ## 友情提示
 
 > 1. **快速体验项目**：[在线访问地址]() 。
 > 2. **全套学习教程**：[《mall学习教程》]() 。
 > 3. **视频教程（最新版）**：[《mall视频教程》]() 。
-> 4. **微服务版本**：基于Spring Cloud Alibaba的项目：[mall-swarm]() 。
-> 5. **分支说明**：`master`分支基于Spring Boot 2.7+JDK 8，`dev-v3`分支基于Spring Boot 3.2+JDK 17。
+
 
 ## 前言
 
-`mall`项目致力于打造一个完整的电商系统，采用现阶段主流技术实现。
+`OJ-LION`:全栈OJ系统，自动判题，ai生成题，检错，评论注册登录，等功能。
 
-## 项目文档
-
-文档地址：[https://www.macrozheng.com](https://www.macrozheng.com)
 
 ## 项目介绍
 
@@ -34,148 +75,55 @@
 
 #### 后台管理系统
 
-前端项目`mall-admin-web`地址：https://github.com/macrozheng/mall-admin-web
 
 项目演示地址： [https://www.macrozheng.com/admin/index.html](https://www.macrozheng.com/admin/index.html)  
 
-![后台管理系统功能演示](E:/%E6%A1%8C%E9%9D%A2/document/resource/mall_admin_show.png)
 
-#### 前台商城系统
-
-前端项目`mall-app-web`地址：https://github.com/macrozheng/mall-app-web
-
-项目演示地址（将浏览器切换为手机模式效果更佳）：[https://www.macrozheng.com/app/](https://www.macrozheng.com/app/)
-
-![前台商城系统功能演示](E:/%E6%A1%8C%E9%9D%A2/document/resource/re_mall_app_show.jpg)
-
-### 组织结构
-
-```lua
-mall
-├── mall-common -- 工具类及通用代码
-├── mall-mbg -- MyBatisGenerator生成的数据库操作代码
-├── mall-security -- SpringSecurity封装公用模块
-├── mall-admin -- 后台商城管理系统接口
-├── mall-search -- 基于Elasticsearch的商品搜索系统
-├── mall-portal -- 前台商城系统接口
-└── mall-demo -- 框架搭建时的测试代码
-```
 
 ### 技术选型
-
 #### 后端技术
 
-| 技术                 | 说明                | 官网                                           |
-| -------------------- | ------------------- | ---------------------------------------------- |
-| SpringBoot           | Web应用开发框架     | https://spring.io/projects/spring-boot         |
-| SpringSecurity       | 认证和授权框架      | https://spring.io/projects/spring-security     |
-| MyBatis              | ORM框架             | http://www.mybatis.org/mybatis-3/zh/index.html |
-| MyBatisGenerator     | 数据层代码生成器    | http://www.mybatis.org/generator/index.html    |
-| Elasticsearch        | 搜索引擎            | https://github.com/elastic/elasticsearch       |
-| RabbitMQ             | 消息队列            | https://www.rabbitmq.com/                      |
-| Redis                | 内存数据存储        | https://redis.io/                              |
-| MongoDB              | NoSql数据库         | https://www.mongodb.com                        |
-| LogStash             | 日志收集工具        | https://github.com/elastic/logstash            |
-| Kibana               | 日志可视化查看工具  | https://github.com/elastic/kibana              |
-| Nginx                | 静态资源服务器      | https://www.nginx.com/                         |
-| Docker               | 应用容器引擎        | https://www.docker.com                         |
-| Jenkins              | 自动化部署工具      | https://github.com/jenkinsci/jenkins           |
-| Druid                | 数据库连接池        | https://github.com/alibaba/druid               |
-| OSS                  | 对象存储            | https://github.com/aliyun/aliyun-oss-java-sdk  |
-| MinIO                | 对象存储            | https://github.com/minio/minio                 |
-| JWT                  | JWT登录支持         | https://github.com/jwtk/jjwt                   |
-| Lombok               | Java语言增强库      | https://github.com/rzwitserloot/lombok         |
-| Hutool               | Java工具类库        | https://github.com/looly/hutool                |
-| PageHelper           | MyBatis物理分页插件 | http://git.oschina.net/free/Mybatis_PageHelper |
-| Swagger-UI           | API文档生成工具     | https://github.com/swagger-api/swagger-ui      |
-| Hibernator-Validator | 验证框架            | http://hibernate.org/validator                 |
+| 技术                      | 说明                | 官网                                                         |
+| ------------------------- | ------------------- | ------------------------------------------------------------ |
+| Spring Boot 2.7.2         | Web应用开发框架     | [官网](https://spring.io/projects/spring-boot)               |
+| MyBatis-Plus 3.5.2        | 增强型ORM框架       | [官网](https://baomidou.com/)                                |
+| Spring Data Redis         | Redis集成           | [官网](https://spring.io/projects/spring-data-redis)         |
+| Spring Data Elasticsearch | 搜索引擎集成        | [官网](https://spring.io/projects/spring-data-elasticsearch) |
+| Knife4j 3.0.3             | Swagger增强文档工具 | [官网](https://doc.xiaominfo.com/)                           |
+| Hutool 5.8.8              | Java工具类库        | [官网](https://hutool.cn/)                                   |
+| Lombok                    | 代码简化库          | [官网](https://projectlombok.org/)                           |
+| Spring Mail               | 邮件服务支持        | [官网](https://spring.io/projects/spring-mail)               |
+| 腾讯云COS SDK 5.6.89      | 对象存储服务        | [文档](https://cloud.tencent.com/document/product/436)       |
+| EasyExcel 3.1.1           | Excel读写工具       | [官网](https://easyexcel.opensource.alibaba.com/)            |
+| OkHttp 4.10.0             | HTTP客户端          | [官网](https://square.github.io/okhttp/)                     |
+| Gson 2.9.1                | JSON序列化库        | [GitHub](https://github.com/google/gson)                     |
+| WxJava 4.4.0              | 微信公众号开发SDK   | [GitHub](https://github.com/Wechat-Group/WxJava)             |
+| Spring AOP                | 面向切面编程        | [官网](https://spring.io/projects/spring-aop)                |
 
 #### 前端技术
 
-| 技术       | 说明                  | 官网                                   |
-| ---------- | --------------------- | -------------------------------------- |
-| Vue        | 前端框架              | https://vuejs.org/                     |
-| Vue-router | 路由框架              | https://router.vuejs.org/              |
-| Vuex       | 全局状态管理框架      | https://vuex.vuejs.org/                |
-| Element    | 前端UI框架            | https://element.eleme.io               |
-| Axios      | 前端HTTP框架          | https://github.com/axios/axios         |
-| v-charts   | 基于Echarts的图表框架 | https://v-charts.js.org/               |
-| Js-cookie  | cookie管理工具        | https://github.com/js-cookie/js-cookie |
-| nprogress  | 进度条控件            | https://github.com/rstacruz/nprogress  |
+| 技术                 | 说明               | 官网                                               |
+| -------------------- | ------------------ | -------------------------------------------------- |
+| Vue 3                | 前端框架           | [官网](https://vuejs.org/)                         |
+| Vue Router 4         | 路由管理           | [官网](https://router.vuejs.org/)                  |
+| Vuex 4               | 全局状态管理       | [官网](https://vuex.vuejs.org/)                    |
+| Ant Design Vue 4.2.6 | UI组件库           | [文档](https://www.antdv.com/docs/vue/introduce)   |
+| Axios 1.8.1          | HTTP请求库         | [官网](https://axios-http.com/)                    |
+| ECharts 5.6.0        | 数据可视化图表库   | [官网](https://echarts.apache.org/)                |
+| Monaco Editor 0.41.0 | 代码编辑器         | [官网](https://microsoft.github.io/monaco-editor/) |
+| ByTMD 1.22.0         | Markdown编辑器插件 | [GitHub](https://github.com/bytedance/bytemd)      |
+| Moment 2.29.4        | 时间处理库         | [官网](https://momentjs.com/)                      |
 
-#### 移动端技术
 
-| 技术         | 说明             | 官网                                    |
-| ------------ | ---------------- | --------------------------------------- |
-| Vue          | 核心前端框架     | https://vuejs.org                       |
-| Vuex         | 全局状态管理框架 | https://vuex.vuejs.org                  |
-| uni-app      | 移动端前端框架   | https://uniapp.dcloud.io                |
-| mix-mall     | 电商项目模板     | https://ext.dcloud.net.cn/plugin?id=200 |
-| luch-request | HTTP请求框架     | https://github.com/lei-mu/luch-request  |
-
-#### 架构图
-
-##### 系统架构图
-
-![系统架构图](E:/%E6%A1%8C%E9%9D%A2/document/resource/re_mall_system_arch.jpg)
-
-##### 业务架构图
-
-![业务架构图](E:/%E6%A1%8C%E9%9D%A2/document/resource/re_mall_business_arch.jpg)
-
-#### 模块介绍
-
-##### 后台管理系统 `mall-admin`
-
-- 商品管理：[功能结构图-商品.jpg](document/resource/mind_product.jpg)
-- 订单管理：[功能结构图-订单.jpg](document/resource/mind_order.jpg)
-- 促销管理：[功能结构图-促销.jpg](document/resource/mind_sale.jpg)
-- 内容管理：[功能结构图-内容.jpg](document/resource/mind_content.jpg)
-- 用户管理：[功能结构图-用户.jpg](document/resource/mind_member.jpg)
-
-##### 前台商城系统 `mall-portal`
-
-[功能结构图-前台.jpg](document/resource/mind_portal.jpg)
-
-#### 开发进度
-
-![项目开发进度图](E:/%E6%A1%8C%E9%9D%A2/document/resource/re_mall_dev_flow.jpg)
-
-## 环境搭建
-
-### 开发工具
-
-| 工具          | 说明                | 官网                                                  |
-| ------------- | ------------------- | ----------------------------------------------------- |
-| IDEA          | 开发IDE             | https://www.jetbrains.com/idea/download               |
-| RedisDesktop  | redis客户端连接工具 | https://github.com/qishibo/AnotherRedisDesktopManager |
-| Robomongo     | mongo客户端连接工具 | https://robomongo.org/download                        |
-| SwitchHosts   | 本地host管理        | https://oldj.github.io/SwitchHosts/                   |
-| X-shell       | Linux远程连接工具   | http://www.netsarang.com/download/software.html       |
-| Navicat       | 数据库连接工具      | http://www.formysql.com/xiazai.html                   |
-| PowerDesigner | 数据库设计工具      | http://powerdesigner.de/                              |
-| Axure         | 原型设计工具        | https://www.axure.com/                                |
-| MindMaster    | 思维导图设计工具    | http://www.edrawsoft.cn/mindmaster                    |
-| ScreenToGif   | gif录制工具         | https://www.screentogif.com/                          |
-| ProcessOn     | 流程图绘制工具      | https://www.processon.com/                            |
-| PicPick       | 图片处理工具        | https://picpick.app/zh/                               |
-| Snipaste      | 屏幕截图工具        | https://www.snipaste.com/                             |
-| Postman       | API接口调试工具     | https://www.postman.com/                              |
-| Typora        | Markdown编辑器      | https://typora.io/                                    |
 
 ### 开发环境
 
-| 工具          | 版本号 | 下载                                                                                 |
-| ------------- | ------ | ------------------------------------------------------------------------------------ |
-| JDK           | 1.8    | https://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html |
-| MySQL         | 5.7    | https://www.mysql.com/                                                               |
-| Redis         | 7.0    | https://redis.io/download                                                            |
-| MongoDB       | 5.0    | https://www.mongodb.com/download-center                                              |
-| RabbitMQ      | 3.10.5 | http://www.rabbitmq.com/download.html                                                |
-| Nginx         | 1.22   | http://nginx.org/en/download.html                                                    |
-| Elasticsearch | 7.17.3 | https://www.elastic.co/downloads/elasticsearch                                       |
-| Logstash      | 7.17.3 | https://www.elastic.co/cn/downloads/logstash                                         |
-| Kibana        | 7.17.3 | https://www.elastic.co/cn/downloads/kibana                                           |
+| 工具  | 版本号 | 下载                                                                                 |
+| ----- | ------ | ------------------------------------------------------------------------------------ |
+| JDK   | 1.8    | https://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html |
+| MySQL | 5.7    | https://www.mysql.com/                                                               |
+| Redis | 7.0    | https://redis.io/download                                                            |
+| Nginx | 1.22   | http://nginx.org/en/download.html                                                    |
 
 ### 搭建步骤
 
@@ -194,14 +142,3 @@ mall
 - 本项目使用Docker Compose请参考： [mall在Linux环境下的部署（基于Docker Compose）](https://www.macrozheng.com/mall/deploy/mall_deploy_docker_compose.html);
 - 本项目在Linux下的自动化部署请参考：[mall在Linux环境下的自动化部署（基于Jenkins）](https://www.macrozheng.com/mall/deploy/mall_deploy_jenkins.html);
 
-## 公众号
-
-加微信群交流，关注公众号「**macrozheng**」，回复「**加群**」即可。
-
-![公众号图片](E:/%E6%A1%8C%E9%9D%A2/document/resource/qrcode_for_macrozheng_258.jpg)
-
-## 许可证
-
-[Apache License 2.0](https://github.com/macrozheng/mall/blob/master/LICENSE)
-
-Copyright (c) 2018-2025 macrozheng
