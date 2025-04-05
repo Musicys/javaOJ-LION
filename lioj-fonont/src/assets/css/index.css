@@ -1,0 +1,100 @@
+* {
+    padding: 0;
+    margin: 0;
+}
+
+root {}
+
+
+
+.action,
+.arco-comment,
+.arco-comment-content {
+    /* background: white; */
+    /* color: white !important; */
+
+    color-scheme: dark;
+}
+
+.arco-tabs {
+    height: 100% !important;
+    display: flex;
+    flex-direction: column;
+
+
+}
+
+.arco-tabs-content {
+    flex: 1;
+}
+
+.arco-tabs-pane,
+.arco-tabs-content-list {
+    height: 100%;
+}
+
+#code-editor {}
+
+tr:nth-child(2n) {
+    background-color: #2A2A2A;
+}
+
+table {
+    border: none;
+}
+
+.language-import {}
+
+
+@font-face {
+    font-family: MyCustomFont;
+    src: url('../font/one.ttf');
+
+}
+
+@font-face {
+    font-family: MyCustomFonts;
+    src: url('../font/two.ttf');
+
+}
+
+@font-face {
+    font-family: MyserverFonts;
+    src: url('../font/server.ttf');
+
+}
+
+
+
+/* 代码块样式 */
+.language-import {
+
+    line-height: 30px;
+
+}
+
+.markdown-body {
+    font-family: ;
+    line-height: 30px;
+    margin: 1em auto;
+
+    font-family: 'MyCustomFont', sans-serif;
+
+
+
+    &>p {
+        line-height: 30px;
+    }
+
+    & code {
+        line-height: 30px;
+    }
+
+    &>pre {
+        line-height: 30px;
+    }
+
+    &>li {
+        line-height: 25px;
+    }
+}
