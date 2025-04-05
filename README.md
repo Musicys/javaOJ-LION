@@ -9,20 +9,12 @@
 
 ### 搭建步骤
 
-> Windows环境部署
-
-- Windows环境搭建请参考：[mall项目后端开发环境搭建](https://www.macrozheng.com/mall/start/mall_deploy_windows.html);
-- 注意：如果只启动`mall-admin`模块，仅需安装MySQL、Redis即可;
-- 克隆`mall-admin-web`项目，并导入到IDEA中完成编译：[前端项目地址](https://github.com/macrozheng/mall-admin-web);
-- `mall-admin-web`项目的安装及部署请参考：[mall项目前端发环境搭建](https://www.macrozheng.com/mall/start/mall_deploy_web.html) 。
-
-> Linux环境部署
-
-- 使用虚拟机安装CentOS7.6请参考：[虚拟机安装及使用Linux，看这一篇就够了](https://www.macrozheng.com/mall/deploy/linux_install.html);
-- 本项目Docker镜像构建请参考：[使用Maven插件为SpringBoot应用构建Docker镜像](https://www.macrozheng.com/project/maven_docker_fabric8.html);
-- 本项目在Docker容器下的部署请参考：[mall在Linux环境下的部署（基于Docker容器）](https://www.macrozheng.com/mall/deploy/mall_deploy_docker.html);
-- 本项目使用Docker Compose请参考： [mall在Linux环境下的部署（基于Docker Compose）](https://www.macrozheng.com/mall/deploy/mall_deploy_docker_compose.html);
-- 本项目在Linux下的自动化部署请参考：[mall在Linux环境下的自动化部署（基于Jenkins）](https://www.macrozheng.com/mall/deploy/mall_deploy_jenkins.html);
+> Windows(本地搭建)
+- git clone https://github.com/Musicys
+- 前端（lioj-fonont）：npm i 或者 yarn i
+- 运行npm run serve 打包 npm run bulid `部署推荐Nginx`
+- 后端（li-code-sandbox-master）：配置 .env配置 数据库，启动 打包即可
+- 后端沙箱(本地li-code-sandbox-master)：可以使用第三方远程沙箱，或者docker配置沙箱启动 打包即可
 
 
 
@@ -36,7 +28,12 @@
 ### 登录界面
 ![用户登录界面](./ui/登录.png)  
 - **功能**：支持账号密码/短信验证码双模式登录
-  
+### 未登录门户页
+![系统首页](/ui/首页（未登录）.png)  
+- **设计**：响应式瀑布流布局
+- **内容**：平台特色展示/热门题目榜单
+- **动效**：卡片悬停3D翻转效果
+
 ### 个人信息管理
 ![用户信息界面](./ui/用户信息.png)  
 - **功能**：头像裁剪上传、绑定社交账号、修改安全设置
@@ -61,7 +58,7 @@
 ### 数据仪表盘
 ![管理面板1](./ui/管理员%20(1).png)  
 - **监控**：实时显示系统健康度/访问量趋势
-### 用户管理系统
+### Ai题目生成
 ![管理面板2](./ui/管理员%20(2).png)  
 - **功能**：批量操作/权限分配/登录日志查询
 - **安全**：敏感操作二次验证机制
@@ -94,11 +91,6 @@
 ---
 
 ## 系统首页
-### 未登录门户页
-![系统首页](/ui/首页（未登录）.png)  
-- **设计**：响应式瀑布流布局
-- **内容**：平台特色展示/热门题目榜单
-- **动效**：卡片悬停3D翻转效果
 
 > 注：所有图片路径基于`/ul/`目录，实际使用请确保路径配置正确。界面采用Ant Design Vue 4.x设计规范，主色系为科技蓝（#1890ff）+ 活力橙（#ff7a45）搭配。
 ### 界面设计规范
