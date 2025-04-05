@@ -14,7 +14,12 @@
 - 前端（lioj-fonont）：npm i 或者 yarn i
 - 运行npm run serve 打包 npm run bulid `部署推荐Nginx`
 - 后端（li-code-sandbox-master）：配置 .env配置 数据库，启动 打包即可
-- 后端沙箱(本地li-code-sandbox-master)：可以使用第三方远程沙箱，或者docker配置沙箱启动 打包即可
+- 后端沙箱(本地li-code-sandbox-master)：可以使用第三方远程沙箱，或者docker配置沙箱
+
+
+> Linux环境部署
+- 
+
 
 
 
