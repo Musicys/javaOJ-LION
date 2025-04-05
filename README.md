@@ -1,7 +1,34 @@
 # OJ-LION
-## UI界面
+## 前言
+
+`OJ-LION`:全栈OJ系统，自动判题，ai生成题，检错，评论注册登录，等功能。
+
+## 项目介绍
+
+`OJ-LION`项目是一套OJ判题系统,docker沙箱,本地沙箱,用户判题返回的一套系统包含前后端，前端采用权限。
+
+### 搭建步骤
+
+> Windows环境部署
+
+- Windows环境搭建请参考：[mall项目后端开发环境搭建](https://www.macrozheng.com/mall/start/mall_deploy_windows.html);
+- 注意：如果只启动`mall-admin`模块，仅需安装MySQL、Redis即可;
+- 克隆`mall-admin-web`项目，并导入到IDEA中完成编译：[前端项目地址](https://github.com/macrozheng/mall-admin-web);
+- `mall-admin-web`项目的安装及部署请参考：[mall项目前端发环境搭建](https://www.macrozheng.com/mall/start/mall_deploy_web.html) 。
+
+> Linux环境部署
+
+- 使用虚拟机安装CentOS7.6请参考：[虚拟机安装及使用Linux，看这一篇就够了](https://www.macrozheng.com/mall/deploy/linux_install.html);
+- 本项目Docker镜像构建请参考：[使用Maven插件为SpringBoot应用构建Docker镜像](https://www.macrozheng.com/project/maven_docker_fabric8.html);
+- 本项目在Docker容器下的部署请参考：[mall在Linux环境下的部署（基于Docker容器）](https://www.macrozheng.com/mall/deploy/mall_deploy_docker.html);
+- 本项目使用Docker Compose请参考： [mall在Linux环境下的部署（基于Docker Compose）](https://www.macrozheng.com/mall/deploy/mall_deploy_docker_compose.html);
+- 本项目在Linux下的自动化部署请参考：[mall在Linux环境下的自动化部署（基于Jenkins）](https://www.macrozheng.com/mall/deploy/mall_deploy_jenkins.html);
+
+
+
+
 # 系统界面展示
-## 用户认证模块
+
 ### 注册界面
 ![用户注册界面](./ui/注册.png)  
 - **功能**：新用户通过邮箱/手机号注册账号
@@ -9,7 +36,7 @@
 ### 登录界面
 ![用户登录界面](./ui/登录.png)  
 - **功能**：支持账号密码/短信验证码双模式登录
-- **特性**：第三方登录入口（微信/QQ快捷登录）
+  
 ### 个人信息管理
 ![用户信息界面](./ui/用户信息.png)  
 - **功能**：头像裁剪上传、绑定社交账号、修改安全设置
@@ -20,6 +47,7 @@
 ![用户主页](./ui/普通用户.png)  
 - **布局**：仪表盘式设计展示提交统计/积分排名
 - **交互**：可拖拽卡片实现界面个性化定制
+- 
 ### 题目交流区
 ![交流界面](./ui/用户回复版.png)  
 - **功能**：Markdown富文本讨论区
@@ -77,21 +105,9 @@
 1. **视觉层级**：使用Ant Design Vue组件库，符合WCAG 2.1无障碍标准
 
 
-## 友情提示
-
-> 1. **快速体验项目**：[在线访问地址]() 。
-> 2. **全套学习教程**：[《mall学习教程》]() 。
-> 3. **视频教程（最新版）**：[《mall视频教程》]() 。
 
 
-## 前言
 
-`OJ-LION`:全栈OJ系统，自动判题，ai生成题，检错，评论注册登录，等功能。
-
-
-## 项目介绍
-
-`OJ-LION`项目是一套OJ判题系统，。
 
 ### 项目演示
 
@@ -99,8 +115,6 @@
 
 
 项目演示地址： [https://www.macrozheng.com/admin/index.html](https://www.macrozheng.com/admin/index.html)  
-
-
 
 ### 技术选型
 #### 后端技术
@@ -121,7 +135,6 @@
 | Gson 2.9.1                | JSON序列化库        | [GitHub](https://github.com/google/gson)                     |
 | WxJava 4.4.0              | 微信公众号开发SDK   | [GitHub](https://github.com/Wechat-Group/WxJava)             |
 | Spring AOP                | 面向切面编程        | [官网](https://spring.io/projects/spring-aop)                |
-
 #### 前端技术
 
 | 技术                 | 说明               | 官网                                               |
@@ -137,7 +150,6 @@
 | Moment 2.29.4        | 时间处理库         | [官网](https://momentjs.com/)                      |
 
 
-
 ### 开发环境
 
 | 工具  | 版本号 | 下载                                                                                 |
@@ -146,21 +158,4 @@
 | MySQL | 5.7    | https://www.mysql.com/                                                               |
 | Redis | 7.0    | https://redis.io/download                                                            |
 | Nginx | 1.22   | http://nginx.org/en/download.html                                                    |
-
-### 搭建步骤
-
-> Windows环境部署
-
-- Windows环境搭建请参考：[mall项目后端开发环境搭建](https://www.macrozheng.com/mall/start/mall_deploy_windows.html);
-- 注意：如果只启动`mall-admin`模块，仅需安装MySQL、Redis即可;
-- 克隆`mall-admin-web`项目，并导入到IDEA中完成编译：[前端项目地址](https://github.com/macrozheng/mall-admin-web);
-- `mall-admin-web`项目的安装及部署请参考：[mall项目前端发环境搭建](https://www.macrozheng.com/mall/start/mall_deploy_web.html) 。
-
-> Docker环境部署
-
-- 使用虚拟机安装CentOS7.6请参考：[虚拟机安装及使用Linux，看这一篇就够了](https://www.macrozheng.com/mall/deploy/linux_install.html);
-- 本项目Docker镜像构建请参考：[使用Maven插件为SpringBoot应用构建Docker镜像](https://www.macrozheng.com/project/maven_docker_fabric8.html);
-- 本项目在Docker容器下的部署请参考：[mall在Linux环境下的部署（基于Docker容器）](https://www.macrozheng.com/mall/deploy/mall_deploy_docker.html);
-- 本项目使用Docker Compose请参考： [mall在Linux环境下的部署（基于Docker Compose）](https://www.macrozheng.com/mall/deploy/mall_deploy_docker_compose.html);
-- 本项目在Linux下的自动化部署请参考：[mall在Linux环境下的自动化部署（基于Jenkins）](https://www.macrozheng.com/mall/deploy/mall_deploy_jenkins.html);
 
