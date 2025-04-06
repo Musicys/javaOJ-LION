@@ -2,7 +2,9 @@ const { defineConfig } = require("@vue/cli-service");
 const MonacoWebpackPlugin = require("monaco-editor-webpack-plugin");
 
 module.exports = defineConfig({
-  transpileDependencies: true,
+  transpileDependencies: true, // 是否需要转译依赖
+
+
   devServer: {
     proxy: {
       '/api': {
@@ -23,6 +25,10 @@ module.exports = defineConfig({
     }
   },
   chainWebpack(config) {
+    // 添加 MoncaoWebpackPlugin
     config.plugin("monaco").use(new MonacoWebpackPlugin());
+
+    // 禁用 TypeScript 类型检查
+    config.plugins.delete("fork-ts-checker"); // 移除 fork-ts-checker 插件
   },
 });

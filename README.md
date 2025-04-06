@@ -17,11 +17,13 @@
 - 后端沙箱(本地li-code-sandbox-master)：可以使用第三方远程沙箱，或者docker配置沙箱
 
 
-> Linux环境部署
-- 
 
+### 项目演示
+`管理员账号`：liwang
+`密码`：12345678
+项目演示地址： [http://101.42.172.99/](http://101.42.172.99/)  
 
-
+``` 请勿dos攻击，服务器崩溃不在上线```
 
 
 # 系统界面展示
@@ -106,12 +108,7 @@
 
 
 
-### 项目演示
 
-#### 后台管理系统
-
-
-项目演示地址： [https://www.macrozheng.com/admin/index.html](https://www.macrozheng.com/admin/index.html)  
 
 ### 技术选型
 #### 后端技术

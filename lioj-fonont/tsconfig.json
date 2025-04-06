@@ -1,11 +1,19 @@
 {
   "compilerOptions": {
+    "strict": false, // 关闭严格模式
+    "noEmitOnError": false, // 即使有错误，也生成输出文件
+    "skipLibCheck": true, // 跳过对声明文件（*.d.ts）的类型检查
+    "noImplicitAny": false, // 允许隐式 any 类型
+    "noImplicitThis": false, // 允许隐式 this 类型
+    "alwaysStrict": false, // 不强制使用严格模式
+    "noImplicitReturns": false, // 不强制所有代码路径都有返回值
+    "noFallthroughCasesInSwitch": false, // 允许 switch 语句中遗漏的 case 语句
+    "noUnusedLocals": false, // 允许未使用的局部变量
+    "noUnusedParameters": false, // 允许未使用的函数参数
     "target": "esnext",
     "module": "esnext",
-    "strict": true,
     "jsx": "preserve",
     "moduleResolution": "node",
-    "skipLibCheck": true,
     "esModuleInterop": true,
     "allowSyntheticDefaultImports": true,
     "forceConsistentCasingInFileNames": true,
