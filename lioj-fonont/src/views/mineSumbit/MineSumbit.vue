@@ -45,9 +45,6 @@
                     :data-index="i.dataIndex"></a-table-column>
 
 
-
-
-
                 <a-table-column title="执行成果" data-index="judgeCase">
                     <template #cell="{ record }">
                         <div style="font-size: .8em;">
@@ -55,7 +52,7 @@
                             <a-tag :color="record.judgeInfo.message == '成功' ? '#304F36' : 'red'"
                                 style="font-size: 1em; margin-right: .5em;   margin-top: .5em;">
 
-                                {{ record.judgeInfo.message }}
+                                {{ record.judgeInfo.message || "编译错误" }}
                             </a-tag>
 
                         </div>
