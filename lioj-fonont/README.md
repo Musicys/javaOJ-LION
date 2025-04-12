@@ -33,3 +33,6 @@
 - 动态加载
 
 
+**本地启动请修改 lioj-fonont\.env.development**
+
+**部署 npm run build配置文件不用管**
