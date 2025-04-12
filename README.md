@@ -1,12 +1,18 @@
 # OJ-LION
 ## 前言
 
-`OJ-LION`:全栈OJ系统，自动判题，ai生成题，检错，评论注册登录，等功能。
+
+
+`OJ-LION`:
+
+```
+全栈OJ系统，自动判题，ai生成题，检错，评论注册登录，等功能，有帮助到您，可以点个start
+```
 
 ## 技术选型
 - 前端
 <br/>
-```
+```json
     初始化:vue3 webpack vue-cli Typescript
     插件：
     1.vuex：用户登录信息存储
@@ -26,6 +32,7 @@
     3. 千问模型
     4. Swagger+injfo4
 ```
+
 ## 项目介绍
 
 `OJ-LION`
