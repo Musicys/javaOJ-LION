@@ -16,7 +16,7 @@
 - 前端
 <br/>
 
-```json
+```
     初始化:vue3 webpack vue-cli Typescript
     插件：
     1.vuex：用户登录信息存储
@@ -30,7 +30,7 @@
   <br/>
 - 后端
   <br/>
-  
+
 ```
     初始化:Sprinboot MYSQL Redis Mybtisplus 
     核心功能：
