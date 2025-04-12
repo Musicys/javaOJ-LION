@@ -1,8 +1,6 @@
 # 项目启动
-- cos配置 src/main/resources/application.yml
-- 邮箱配置 src/main/resources/application.yml
-- 邮箱配置 com/yupi/yuoj/utils/MailUtils.java
-- sql导入 sql/create_table.sql
+- .env配置文件
+- sql导入 sql/
 - 数据库配置 src/main/resources/application.yml
 - redis启动
 - 项目初始化成功
