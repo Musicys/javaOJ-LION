@@ -10,8 +10,12 @@
 ```
 
 ## 技术选型
+
+
+  <br/>
 - 前端
 <br/>
+
 ```json
     初始化:vue3 webpack vue-cli Typescript
     插件：
@@ -22,8 +26,11 @@
     5.Arco Design Vue组件库
     6.open Api 自动化接口文档
 ```
+
+  <br/>
 - 后端
   <br/>
+  
 ```
     初始化:Sprinboot MYSQL Redis Mybtisplus 
     核心功能：
