@@ -55,6 +55,9 @@
 
 
         </a-space>
+        <div style="margin: 1em;">
+            <ChangeStyle @day="changeToDay" @night="changeToNight" />
+        </div>
     </div>
 </template>
 
@@ -67,9 +70,21 @@ import { useStore } from 'vuex'
 import { message } from "ant-design-vue"
 import { UserControllerService, QuestionCommentControllerService } from "@/generated"
 import { IsStart } from "@/util/routerRaget"
+import ChangeStyle from "@/components/ChangeStyle.vue"
 const Route = useRoute()
 const Router = useRouter()
 const RouteList = ref(Routers)
+
+const changeToDay = () => {
+    console.log("day")
+
+    document.body.removeAttribute('arco-theme');
+}
+const changeToNight = () => {
+    console.log("night")
+
+    document.body.setAttribute('arco-theme', 'dark');
+}
 
 
 const goLoginAndEexitLogin = async () => {

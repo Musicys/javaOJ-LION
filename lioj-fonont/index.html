@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+
+
+    <script>
+        //防抖 N次触发最后一次
+        function debounce(fn, delay) {
+            let timer = null;
+
+
+            return function (i) {
+                let context = this;
+                let args = arguments;
+                if (timer) clearTimeout(timer);
+                timer = setTimeout(function () {
+                    fn.apply(context, args);
+                }, delay);
+            }
+        }
+
+
+
+
+        //节流 规定时间第一次未执行，其他的不执行
+        function throttle(fn, delay) {
+            let timer = null;
+            return function (i) {
+                let context = this;
+                let args = arguments;
+                if (!timer) {
+                    timer = setTimeout(function () {
+                        fn.apply(context, args);
+                        timer = null;
+                    }, delay);
+                }
+            }
+        }
+
+
+
+        const arr = async () => {
+            await new Promise((resolve, reject) => {
+                setTimeout(() => {
+                    console.log("123");
+                    resolve("456")
+                }, 1000)
+            })
+
+            console.log("456");
+
+        }
+        arr()
+    </script>
+</body>
+
+</html>

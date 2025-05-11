@@ -208,10 +208,11 @@ onMounted(() => {
     height: 250px;
     display: flex;
 
-    background: #383F3F;
+    background: var(--home-back);
+    color: var(--home-color);
     display: flex;
     gap: 10px;
-    border: .1px solid rgba(255, 255, 255, .6);
+    border: 1px solid var(--border);
     border-radius: 15px;
 }
 
@@ -268,6 +269,7 @@ onMounted(() => {
 
     height: 150px;
     grid-template-columns: repeat(3, 1fr);
+
 }
 
 .a-cart {

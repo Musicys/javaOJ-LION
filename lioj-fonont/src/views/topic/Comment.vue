@@ -1,59 +1,61 @@
 <template>
+    <div class="box-cart">
+        <a-comment datetime="2025-11-14" align="right">
+            <template #author>
+                <span>{{ pops.data.usercoment.userName }}</span>
+                <a-tag style="color: black; background: #388079; margin: 0 1em;"> {{ pops.data.usercoment.userRole ==
+                    "admin" ? "管理员" :
+                    pops.data.usercoment.userRole == "user" ? "普通用户" : "已注销"
 
-    <a-comment datetime="2025-11-14" align="right">
-        <template #author>
-            <span>{{ pops.data.usercoment.userName }}</span>
-            <a-tag style="color: black; background: #388079; margin: 0 1em;"> {{ pops.data.usercoment.userRole ==
-                "admin" ? "管理员" :
-                pops.data.usercoment.userRole == "user" ? "普通用户" : "已注销"
+                }}</a-tag>
+            </template>
 
-            }}</a-tag>
-        </template>
-
-        <template #actions>
-            <span class="action" key="heart" @click="onLikeChange">
-                <span v-if="pops.data.like">
-                    <IconHeartFill :style="{ color: '#f53f3f' }" />
-                </span>
-                <span v-else>
-                    <IconHeart />
-                </span>
-                {{ pops.data.good }}
-            </span>
-
-            <span class="action" @click="updateInput(true)" style="cursor: pointer;" key="reply">
-                <IconMessage /> 回复
-            </span>
-        </template>
-        <template #avatar>
-            <router-link target="_blank" :to="{ path: `/messge/${pops.data.usercoment.id}` }">
-                <a-avatar>
-                    <img alt="avatar" :src="pops.data.usercoment.userAvatar" />
-                </a-avatar>
-
-            </router-link>
-        </template>
-        <template #content>
-            <div>
-                {{
-
-                    pops.data.content
-                }}
-            </div>
-        </template>
-        <a-comment align="right" v-if="Isinput" :avatar="state.state.user.user.userAvatar">
             <template #actions>
-                <a-button key="0" style="color: black;" @click="updateInput(false)" type="secondary"> 取消 </a-button>
-                <a-button key="1" @click="sendComment()" type="primary"> 发送</a-button>
+                <span class="action" key="heart" @click="onLikeChange">
+                    <span v-if="pops.data.like">
+                        <IconHeartFill :style="{ color: '#f53f3f' }" />
+                    </span>
+                    <span v-else>
+                        <IconHeart />
+                    </span>
+                    {{ pops.data.good }}
+                </span>
+
+                <span class="action" @click="updateInput(true)" style="cursor: pointer;" key="reply">
+                    <IconMessage /> 回复
+                </span>
+            </template>
+            <template #avatar>
+                <router-link target="_blank" :to="{ path: `/messge/${pops.data.usercoment.id}` }">
+                    <a-avatar>
+                        <img alt="avatar" :src="pops.data.usercoment.userAvatar" />
+                    </a-avatar>
+
+                </router-link>
             </template>
             <template #content>
-                <a-input style="background: #1D2527;" v-model="fromValue"
-                    :placeholder="`@${pops.data.usercoment.userName}`" />
-            </template>
-        </a-comment>
-        <slot></slot>
+                <div>
+                    {{
 
-    </a-comment>
+                        pops.data.content
+                    }}
+                </div>
+            </template>
+            <a-comment align="right" v-if="Isinput" :avatar="state.state.user.user.userAvatar">
+                <template #actions>
+                    <a-button key="0" style="color: black;" @click="updateInput(false)" type="secondary"> 取消 </a-button>
+                    <a-button key="1" @click="sendComment()" type="primary"> 发送</a-button>
+                </template>
+                <template #content>
+                    <a-input style="background: var(--pr-back);;" v-model="fromValue"
+                        :placeholder="`@${pops.data.usercoment.userName}`" />
+                </template>
+            </a-comment>
+            <slot></slot>
+
+        </a-comment>
+    </div>
+
 
     <div class="henx"></div>
 </template>
@@ -199,8 +201,15 @@ onMounted(() => {
 </script>
 
 <style scoped>
+.box-cart {
+    background: var(--home-back);
+
+}
+
 .henx {
     width: 100%;
-    border-bottom: .5px solid white;
+    border-bottom: .5px solid var(--border);
+
+
 }
 </style>

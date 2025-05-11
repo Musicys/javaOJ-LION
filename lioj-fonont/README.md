@@ -13,8 +13,16 @@
 - 请求： axios; 拦截器 openai自动生成文档
   deepseek`https://platform.deepseek.com/api_keys`
 
+
 # 优化已做
 
+
+```js
+
+npx openapi --input http://localhost:8080/api/v2/api-docs --output ./generated --generator-name javascript --additional-properties=usePromises=true,http=axios
+
+
+```
 - 优化提交题目界面
 - 优化答题界面
 - 优化主页

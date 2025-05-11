@@ -131,7 +131,7 @@ export class QuestionCommentControllerService {
     public static getRequestedUsingGet(): CancelablePromise<BaseResponse_boolean_> {
         return __request(OpenAPI, {
             method: 'GET',
-            url: '/api/comment/get/requested ',
+            url: '/api/comment/get/requested',
             errors: {
                 401: `Unauthorized`,
                 403: `Forbidden`,

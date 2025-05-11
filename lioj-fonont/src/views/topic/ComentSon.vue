@@ -56,7 +56,7 @@
                     <a-button key="1" @click="sendComment()" type="primary"> 发送</a-button>
                 </template>
                 <template #content>
-                    <a-input style="background: #1D2527;" v-model="fromValue"
+                    <a-input style="background: var(--pr-back);" v-model="fromValue"
                         :placeholder="`@${pops.data.usercoment.userName}`" />
                 </template>
             </a-comment>
@@ -83,7 +83,7 @@ const emit = defineEmits(["PostCommentLsit"]);
 
 const state = useStore();
 
-const pops = defineProps(["data", "id","commentid"])
+const pops = defineProps(["data", "id", "commentid"])
 
 
 const Isinput: Ref<Boolean> = ref(false)
@@ -219,7 +219,8 @@ onMounted(() => {
 <style scoped>
 .son {
 
-    background: #3C3C3C;
+    background: var(--home-back);
+    color: var(--home-color);
     padding: 1em;
     border-radius: 15px;
     margin-bottom: 1em;

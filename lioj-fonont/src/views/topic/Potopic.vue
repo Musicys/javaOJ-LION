@@ -6,11 +6,11 @@
 
             <!-- 提交题目头部 -->
             <div class="prot-top"
-                style="height: 6%;width: 100%; background: #0F0F0F;  display: flex; justify-content: space-between; align-items: center; padding: 0 20px;">
+                style="height: 6%;width: 100%; background: var(--home-back);   display: flex; justify-content: space-between; align-items: center; padding: 0 20px;">
 
                 <div style="display: flex; align-items: center; gap: 12px;">
-                    <span style="color: #fff; font-size: 16px; font-weight: 500;">#{{ data.id }}</span>
-                    <span style="color: #fff; font-size: 16px; font-weight: 500;">{{ data.title }}</span>
+                    <span style="color: var(--home-color); font-size: 16px; font-weight: 500;">#{{ data.id }}</span>
+                    <span style="color: var(--home-color); font-size: 16px; font-weight: 500;">{{ data.title }}</span>
                     <a-tag color="blue" v-if="(data.acceptedNum / data.submitNum * 100) >= 70">简单</a-tag>
                     <a-tag color="orange"
                         v-if="(data.acceptedNum / data.submitNum * 100) >= 30 && (data.acceptedNum / data.submitNum * 100) < 70">中等</a-tag>
@@ -18,10 +18,13 @@
                 </div>
 
                 <div style="display: flex; gap: 8px; margin-right: 2em;">
-                    <a-button class="but" @click="gohome" style="background: #2F2F2F; color: #6E6E6E;"
+                    <a-button class="but" @click="gohome"
+                        style="background: var(--home-back); border: 1px solid var(--border); color: #6E6E6E;"
                         type="primary">返回</a-button>
-                    <a-button class="but" style="background: #2F2F2F; color: #2B7839;" type="dashed" @click="sumbit">{{
-                        IsSumbit ? "判题中" : "提交" }}</a-button>
+                    <a-button class="but"
+                        style="background: var(--home-back); color: #2B7839;border: 1px solid var(--border);"
+                        type="dashed" @click="sumbit">{{
+                            IsSumbit ? "判题中" : "提交" }}</a-button>
                 </div>
                 <div class="prot-top-user" style="display: flex; gap: 8px; margin-right: 3em; color: wheat;">
                     {{ state.state.user.user.userName }}
@@ -34,7 +37,7 @@
 
 
                 <a-layout-sider class="border"
-                    style="max-width: 97vw;background: #262626; color: white; padding: 20px; width: 50vw;"
+                    style="max-width: 97vw;background: var(--home-back); color: var(--home-color); padding: 20px; width: 50vw;"
                     :resize-directions="['right']">
 
 
@@ -71,23 +74,23 @@
                                 </div>
                                 <!-- 评论 -->
                                 <div class="page2" @scroll="handleScroll">
-                                    <CommentBox  :commentid="CommentID" @PostCommentLsit="setComentList(2)"></CommentBox>
+                                    <CommentBox :commentid="CommentID" @PostCommentLsit="setComentList(2)"></CommentBox>
 
                                     <div class="comlisttop">
                                         <div> 评论：{{ Commentutil.tatiol }}</div>
                                         <div style="margin-left: 1em;">
                                             <span
-                                                :style="{ 'color': CommentSolder.sortOrder == 'descend' ? '#57965C' : 'white', 'cursor': 'pointer' }"
+                                                :style="{ 'color': CommentSolder.sortOrder == 'descend' ? '#57965C' : '#61A9DE', 'cursor': 'pointer' }"
                                                 @click="setsolder(`descend`)">
                                                 最新
                                             </span>
 
-                                            <span style="margin: auto .5em; border-right:2px solid white;">
+                                            <span style="margin: auto .5em; border-right:2px solid var(--border);">
 
                                             </span>
 
                                             <span
-                                                :style="{ 'color': CommentSolder.sortOrder == 'ascend' ? '#57965C' : 'white', 'cursor': 'pointer' }"
+                                                :style="{ 'color': CommentSolder.sortOrder == 'ascend' ? '#57965C' : '#61A9DE', 'cursor': 'pointer' }"
                                                 @click="setsolder(`ascend`)">
                                                 最久
                                             </span>
@@ -105,9 +108,10 @@
                                         v-else-if="IsComentList && !IsPostAut">
                                         <!-- 这里放置你的内容 -->
                                         <!-- 内容 -->
-                                        <Comment :commentid="CommentID" @PostCommentLsit="setComentList(2)" v-for="i in ComeentList"
-                                            :key="i.id" :data="i">
-                                            <ComentSon :commentid="CommentID" @PostCommentLsit="GetComment(i.id, i.chiden.total)" :id="i.id"
+                                        <Comment :commentid="CommentID" @PostCommentLsit="setComentList(2)"
+                                            v-for="i in ComeentList" :key="i.id" :data="i">
+                                            <ComentSon :commentid="CommentID"
+                                                @PostCommentLsit="GetComment(i.id, i.chiden.total)" :id="i.id"
                                                 v-for="(e, index) in i.chiden.records" :key="e.id" :data="e" />
                                             <div style="text-align: center; color: white;">
                                                 <span
@@ -701,7 +705,7 @@ onMounted(() => {
     height: 40vh;
     bottom: 0;
 
-    border-top: .1px solid white;
+    border-top: .1px solid var(--border);
     /* 隐藏整个滚动条 */
 
     scrollbar-width: none;
@@ -761,7 +765,8 @@ onMounted(() => {
 }
 
 .bk {
-    background: #1E1E1E;
+    background: var(--home-back);
+    color: var(--home-color);
 
     /* 定义滚动条轨道的样式 */
     ::-webkit-scrollbar {
@@ -794,12 +799,18 @@ onMounted(() => {
 
 .border {
 
-    border: 1px solid white;
+    border: 1px solid var(--border);
     border-radius: 15px 0px 0px 15px;
 }
 
+.contenx {
+    background: var(--home-back);
+    color: var(--home-color);
+}
+
 .top {
-    background: #333333;
+    background: var(--home-back);
+    color: var(--home-color);
 
     /* 定义滚动条轨道的样式 */
     ::-webkit-scrollbar {
@@ -811,7 +822,7 @@ onMounted(() => {
     ::-webkit-scrollbar-track {
         background-color: #2C2C2C;
         /* 背景色 */
-        border: 1px solid white;
+        border: 1px solid var(--border);
         /* 边框颜色 */
     }
 
@@ -837,7 +848,8 @@ onMounted(() => {
     width: 100vw;
     height: 100vh;
     overflow: hidden;
-    background: #262626;
+    background: var(--home-back);
+    color: var(--home-color);
 
 }
 

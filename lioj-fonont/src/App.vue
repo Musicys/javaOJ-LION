@@ -39,15 +39,16 @@ onMounted(async () => {
 
 
 
-  document.body.setAttribute('arco-theme', 'dark');
+
 })
 </script>
 
 <style scoped>
 .center {
   padding: 1em 0;
-  background: #1A1A1A;
-  border-top: .5px solid white;
+  background: var(--home-back);
+  color: var(--home-color);
+  border-top: .5px solid var(--border);
   min-height: 70vh;
 }
 
@@ -55,7 +56,8 @@ onMounted(async () => {
   width: 100vw;
   height: 100vh;
   overflow-x: hidden;
-  background: #1A1A1A;
+  background: var(--home-back);
+  color: var(--home-color);
   position: relative;
 
   /* background: #232324; */
@@ -66,7 +68,7 @@ onMounted(async () => {
 
   /* 滚动条轨道(背景)的样式 */
   &::-webkit-scrollbar-track {
-    background-color: #2C2C2C;
+    background-color: var(--home-color);
   }
 
   /* 滚动条滑块的样式 */

@@ -39,7 +39,7 @@
                                 <a-trigger trigger="click">
                                     <a-button style="font-size: 1em;">查看</a-button>
                                     <template #content>
-                                        <div class="demo-arrow" style="background: #2E2E30;
+                                        <div class="demo-arrow" style="background: var(--home-back);
                                         width: 150px;
                                         box-shadow: .1px .1px .1px #888888;
                                         font-size: .6em;
@@ -70,7 +70,7 @@
                                 <a-trigger trigger="click">
                                     <a-button style="font-size: 1em;">查看</a-button>
                                     <template #content>
-                                        <div class="demo-arrow" style="background: #2E2E30;
+                                        <div class="demo-arrow" style="background: var(--home-back);
                                         width: 80px;
                                         box-shadow: .1px .1px .1px #888888;
                                         font-size: .6em;

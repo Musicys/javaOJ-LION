@@ -5,8 +5,6 @@
 
 root {}
 
-
-
 .action,
 .arco-comment,
 .arco-comment-content {
@@ -74,7 +72,7 @@ table {
 }
 
 .markdown-body {
-    font-family: ;
+
     line-height: 30px;
     margin: 1em auto;
 
@@ -97,4 +95,49 @@ table {
     &>li {
         line-height: 25px;
     }
+}
+
+/* 黑夜 */
+
+body[arco-theme="dark"] {
+    --home-back: #1A1A1A;
+    --home-back-from: #292F2F;
+    --home-color: #fff;
+
+    --but-back: #2C2C2C;
+    --border: #fff;
+    --pr-back: #1D2527;
+}
+
+/* 白天 */
+
+body {
+    --home-back: #fff;
+    --home-color: #000;
+    --but-back: #E5E6EB;
+    --border: #000;
+    --pr-back: #fff;
+}
+
+.arco-comment-content,
+.arco-comment-author,
+.arco-comment-datetime,
+.action,
+.arco-card-body {
+
+
+    color: var(--home-color) !important;
+
+}
+
+.arco-card-body,
+.arco-card-header-title,
+.arco-card-header,
+.arco-card {
+    background: var(--home-back) !important;
+}
+
+.arco-btn-primary {
+    background: var(--but-back) !important;
+    color: var(--home-color) !important;
 }

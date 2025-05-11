@@ -82,14 +82,15 @@ onMounted(() => {
     width: 90%;
     margin: 1em auto;
     border-radius: 15px;
-    background: #1D2527;
+    background: var(--home-back);
     /* 假设 --mart-top-pr-back 的值 */
     display: flex;
-    color: white;
+    color: var(--home-color);
     flex-direction: column;
     align-items: center;
     justify-content: center;
     padding: 1em;
+    border: 1px solid var(--border);
 }
 
 .pr .pr_but {
@@ -143,7 +144,8 @@ onMounted(() => {
 }
 
 .pr .text:focus {
-    background: #272F2F;
+    background: var(--pr-back);
+    color: var(--home-color);
     /* 假设 --mart-commment-bot-back 的值 */
 }
 </style>

@@ -12,7 +12,7 @@
             
         </a-spin>
         <transition name="fade">
-            <div v-if="CommentScrall" class="complete" style="text-align: center; padding: 16px; color: #999;">
+            <div v-if="CommentScrall" class="complete" style="text-align: center; padding: 16px; color: var(--home-color);">
                 <icon-check-circle-fill style="color: #00b42a; font-size: 18px; margin-right: 8px;" />
                 <icon-logo style="margin-right: 8px;" />
                 <span style="margin-left: 8px;">已加载所有回复</span>
@@ -77,6 +77,7 @@ onMounted(() => {
 </script>
 
 <style scoped>
+
 .reply-container {
     height: 100%;
     overflow-y: auto;
@@ -87,6 +88,8 @@ onMounted(() => {
 
     overflow-x: auto;
 
+    background: var(--home-back);
+    color: var(--home-color);
     /* 定义滚动条轨道的样式 */
     &::-webkit-scrollbar {
         width: 10px;

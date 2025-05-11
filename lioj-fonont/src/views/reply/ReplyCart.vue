@@ -20,11 +20,11 @@
         <div class="content"><span>{{ data.content }}</span> <span>
 
                 <a-typography-paragraph style="max-width:50px ; cursor: pointer;" underline :ellipsis="{
-                rows: 1,
-                showTooltip: true,
-            }">
+                    rows: 1,
+                    showTooltip: true,
+                }">
                     {{ data.questionComment
-                .content }}
+                        .content }}
                 </a-typography-paragraph>
             </span></div>
         <div class="footer">
@@ -40,7 +40,7 @@
                 <a-button key="1" @click="sendComment()" type="primary"> 发送</a-button>
             </template>
             <template #content>
-                <a-input style="background: #1D2527;" v-model="fromValue"
+                <a-input style="background: var(--pr-back);" v-model="fromValue"
                     :placeholder="`@${data.usercoment.userName}`" />
             </template>
         </a-comment>
@@ -117,12 +117,12 @@ onMounted(() => {
 <style scoped>
 .time {
     font-size: 12px;
-    color: white;
+    color: var(--home-color);
 
 }
 
 .reply {
-    border-bottom: .5px solid rgba(255, 255, 255, .6);
+    border-bottom: .5px solid var(--boder);
     margin-bottom: 1em;
     padding-bottom: 1em;
 }
@@ -142,12 +142,16 @@ onMounted(() => {
 
 .username {
     font-size: 14px;
-    color: white;
+
+
+    background: var(--home-back);
+    color: var(--home-color);
+
 }
 
 .content {
     font-size: 14px;
-    color: white;
+    color: var(--home-color);
     line-height: 1.5;
     display: flex;
     justify-content: space-between;
@@ -177,7 +181,7 @@ onMounted(() => {
 .delete-btn {
     display: none;
     cursor: pointer;
-    color: #999;
+    color: var(--home-color);
     padding: 2px 4px;
     border-radius: 2px;
 }
